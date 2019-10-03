@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "title": "New ES6 upgrade available",
+    "feed": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto"
+  },
+  {
+    "id": 2,
+    "title": "The importance of REACT in the development",
+    "feed": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident"
+  },
+  {
+    "id": 3,
+    "title": "REACT developers going on strike",
+    "feed": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+  },
+  {
+    "id": 4,
+    "title": "ECMAScript 2019 is out",
+    "feed": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+  },
+  {
+    "id": 5,
+    "title": "Rust 1.38 releases with pipelined compilation for better parallelism while building a multi-crate project",
+    "feed": "After releasing Rust 1.37 last month, the Rust team announced the release of Rust 1.38 yesterday. This version supports pipelined rustc compilation, an extended #[deprecated] attribute for macros, the std::any::type_name function to know the type name, and more."
+  },
+
+  {
+    "id": 6,
+    "title": "ReactOS 0.4.12 releases with kernel improvements, Intel e1000 NIC driver support, and more",
+    "feed": "Earlier this week, the ReactOS team announced the release of ReactOS 0.4.12. This release comes with a bunch of kernel improvements, Intel e1000 NIC driver support, font improvements, and more."
+  },
+  {
+    "id": 7,
+    "title": "Introducing Weld, a runtime written in Rust and LLVM for cross-library optimizations",
+    "feed": "Weld is an open-source Rust project for improving the performance of data-intensive applications. It is an interface and runtime that can be integrated into existing frameworks including Spark, TensorFlow, Pandas, and NumPy without changing their user-facing APIs."
+  },
+  {
+    "id": 8,
+    "title": "DevOps platform for coding, GitLab reached more than double valuation of $2.75 billion ",
+    "feed": "Yesterday, GitLab, a San Francisco based start-up, raised $268 million in a Series E funding round valuing the company at $2.75 billion, more than double of its last valuation. In the Series D round funding of $100 million the company was valued at $1.1 billion; and with today’s announcement, the valuation has more than doubled in less than a year."
+  }
+]
