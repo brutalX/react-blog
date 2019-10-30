@@ -9,7 +9,7 @@ const Title = webdata => {
   return webdata.title;
 };
 
-const Header = props => {
+const Header = () => {
   return (
     <div className="nav nav-bg">
       <div className="title">
@@ -17,7 +17,7 @@ const Header = props => {
       </div>
 
       <div className="search">
-        <SearchBar passkey={props.keyword} />
+        <SearchBar />
       </div>
     </div>
   );

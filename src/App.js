@@ -1,36 +1,39 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./css/App.css";
-import JSON from "./db.json";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from "./components/Navigation/Header";
-import BlogList from "./components/Content/BlogList";
 
+import Landing from "./components/Content/Landing";
+import Article from "./components/Content/Article";
+import SearchArticle from "./components/Content/SearchArticle";
 class App extends Component {
-  state = {
-    blogs: JSON,
-    filtered: []
-  };
-
-  getKeyword = event => {
-    const { blogs } = this.state;
-    let data = event.target.value;
-    let filteredData = blogs.filter(item => {
-      return item.title.toLowerCase().indexOf(data.toLowerCase()) > -1;
-    });
-    this.setState({ filtered: filteredData });
-  };
-
+  // state = {
+  //   blogs: JSON,
+  //   filtered: []
+  // };
+  // getKeyword = event => {
+  //   const { blogs } = this.state;
+  //   let data = event.target.value;
+  //   let filteredData = blogs.filter(item => {
+  //     return item.title.toLowerCase().indexOf(data.toLowerCase()) > -1;
+  //   });
+  //   this.setState({ filtered: filteredData });
+  // };
   render() {
-    const { filtered, blogs } = this.state;
     return (
-      <div className="App">
-        <div>
-          <Header keyword={this.getKeyword} />
-        </div>
-        <div className="list-container">
-          <BlogList list={filtered.length !== 0 ? filtered : blogs} />
-        </div>
-      </div>
+      <Fragment>
+        <Router>
+          <Fragment>
+            <Header keyword={this.getKeyword} />
+            <Switch>
+              <Route path="/" exact component={Landing} filterlist="" />
+              <Route path="/article/:id" component={Article} />
+              <Route path="/search" component={SearchArticle} />
+            </Switch>
+          </Fragment>
+        </Router>
+      </Fragment>
     );
   }
 }

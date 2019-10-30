@@ -1,13 +1,16 @@
 import React from "react";
 import Cards from "./Cards";
 
+import { Link } from "react-router-dom";
 const BlogsItem = props => {
-  const { title, feed } = props;
+  const { id, title, feed } = props;
+
   return (
     <Cards>
-      <h3>{title}</h3>
+      <Link to={`/article/${id}`}>{title}</Link>
       <div>{feed}</div>
     </Cards>
   );
 };
+
 export default BlogsItem;

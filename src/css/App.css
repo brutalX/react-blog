@@ -4,41 +4,55 @@ body {
 .text {
   color: #09d3ac;
 }
-.nav {
-  font-family: "Arial Black", Gadget, sans-serif;
-  display: flex;
-  justify-content: flex-end;
-  height: 50px;
-}
-
-.title {
-  text-align: center;
-  flex-grow: 0.1;
-}
-.title-style {
-  color: #ffffff;
-}
-.search {
-  margin-left: auto;
-  flex-grow: 0.1;
-  padding-top: 16px;
-}
 .nav-bg {
   background: #ff4000;
   color: #ffffff;
 }
-.inputSearch {
+.nav {
+  font-family: "Arial Black", Gadget, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title-style {
+  color: #ffffff;
+}
+.title {
+  order: 1;
+  flex-grow: 3;
+  border: 1px solid green;
+}
+
+.search {
+  order: 2;
+  flex-grow: 1;
+  border: 1px solid green;
+  padding: 20px;
+}
+
+.searchBar {
   border: 0px;
   height: 25px;
-  width: 150px;
-  border-radius: 5px;
+  width: 250px;
+  box-sizing: border-box;
+
   /* -webkit-transition: width 0.35s ease-in-out;
   transition: width 0.35s ease-in-out; */
-  padding: 0px 5px;
+}
+.searchBar ul {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  border-top: 1px solid #ccc;
+  background-color: #ffffff;
+  width: 250px;
+  list-style: none;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .inputSearch:focus {
   outline: #ffffff;
-  border-radius: 5px;
 }
 .list-container {
   display: flex;
@@ -49,6 +63,7 @@ body {
   margin: 50px 0px;
 }
 .bloglist {
+  background-color: #ffffff;
   margin: 10px 0;
   flex-basis: 20%;
   padding: 10px;
@@ -74,4 +89,9 @@ body {
     flex-direction: column;
     justify-content: space-around;
   }
+}
+.container {
+  padding: 20px;
+  height: 100%;
+  background-color: #09d3ac;
 }
