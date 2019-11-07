@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import JSON from "../../db.json";
+import { withRouter, Redirect } from "react-router-dom";
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.blogs = JSON;
     this.state = {
-      suggestions: []
+      suggestions: [],
+      search_data: ""
     };
   }
+
   handleChange = e => {
     const value = e.target.value;
     let filtered = [];
@@ -36,18 +39,46 @@ class SearchBar extends Component {
       </ul>
     );
   }
+  keyPressed = event => {
+    if (event.key === "Enter") {
+      let eventData = event.target.value;
+      if (eventData !== "") {
+        this.setState(() => ({ search_data: eventData }));
+      } else {
+        return console.log("error");
+      }
+    }
+  };
+
   render() {
+    const { search_data } = this.state;
+    const location = {
+      pathname: "/search",
+      search: "?title=" + search_data
+    };
+    const SearchTopic = location => (
+      <Redirect
+        to={{
+          ...location,
+          pathname: "/search",
+          search: "?title=" + search_data
+        }}
+      />
+    );
+    console.log(this.props.location);
     return (
       <div className="searchBar">
         <input
           className="searchBar"
           onChange={this.handleChange}
+          onKeyPress={this.keyPressed}
           placeholder="Search"
           type="textbox"
         />
         {this.handleSuggestion()}
+        {search_data.length !== 0 && SearchTopic(location)}
       </div>
     );
   }
 }
-export default SearchBar;
+export default withRouter(SearchBar);

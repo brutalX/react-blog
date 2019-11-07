@@ -15,8 +15,16 @@ class SearchArticle extends Component {
     const values = queryString.parse(this.props.location.search);
     const { title } = values;
     this.fetchData(title);
+    console.log(this.props.location);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      const values = queryString.parse(this.props.location.search);
+      const { title } = values;
+      this.fetchData(title);
+    }
+  }
   fetchData = title => {
     const { blogs } = this.state;
     let filteredData = blogs.filter(item => {
@@ -25,27 +33,12 @@ class SearchArticle extends Component {
     this.setState({ filtered: filteredData });
   };
 
-  // getKeyword = (event, values) => {
-  //   const { blogs } = this.state;
-
-  //   console.log("this is the " + values);
-  //   let data = event.target.value;
-  //   let filteredData = blogs.filter(item => {
-  //     return item.title.toLowerCase().indexOf(values.title.toLowerCase()) > -1;
-  //   });
-  //   this.setState({ filtered: filteredData });
-  // };
   render() {
+    const { blogs, filtered } = this.state;
     return (
       <Container>
         <ListContainer>
-          <BlogList
-            list={
-              this.state.filtered.length !== 0
-                ? this.state.filtered
-                : this.state.blogs
-            }
-          />
+          <BlogList list={filtered.length !== 0 ? filtered : blogs} />
         </ListContainer>
       </Container>
     );

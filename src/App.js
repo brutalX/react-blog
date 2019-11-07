@@ -8,18 +8,6 @@ import Landing from "./components/Content/Landing";
 import Article from "./components/Content/Article";
 import SearchArticle from "./components/Content/SearchArticle";
 class App extends Component {
-  // state = {
-  //   blogs: JSON,
-  //   filtered: []
-  // };
-  // getKeyword = event => {
-  //   const { blogs } = this.state;
-  //   let data = event.target.value;
-  //   let filteredData = blogs.filter(item => {
-  //     return item.title.toLowerCase().indexOf(data.toLowerCase()) > -1;
-  //   });
-  //   this.setState({ filtered: filteredData });
-  // };
   render() {
     return (
       <Fragment>
