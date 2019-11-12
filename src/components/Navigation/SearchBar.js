@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import JSON from "../../db.json";
-import { withRouter, Redirect } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
 
 class SearchBar extends Component {
   constructor(props) {
@@ -34,7 +34,10 @@ class SearchBar extends Component {
     return (
       <ul>
         {suggestions.map(item => (
-          <li key={item}>{item}</li>
+          <li key={item}>
+            {item}
+            {/* <Link to={`/article/${id}`}>{item}</Link> */}
+          </li>
         ))}
       </ul>
     );
@@ -65,7 +68,7 @@ class SearchBar extends Component {
         }}
       />
     );
-    console.log(this.props.location);
+
     return (
       <div className="searchBar">
         <input

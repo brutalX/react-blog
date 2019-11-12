@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import JSON from "../../db.json";
 import BlogList from "./BlogList";
 import Container from "../Layout/Container";

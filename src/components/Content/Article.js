@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Container from "../Layout/Container";
 import JSON from "../../db.json";
 import "./../../css/App.css";

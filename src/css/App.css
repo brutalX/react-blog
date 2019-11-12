@@ -14,8 +14,9 @@ body {
   flex-wrap: wrap;
 }
 
-.title-style {
+.title-style > a {
   color: #ffffff;
+  text-decoration: none;
 }
 .title {
   order: 1;
