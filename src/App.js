@@ -15,7 +15,7 @@ class App extends Component {
           <Fragment>
             <Header keyword={this.getKeyword} />
             <Switch>
-              <Route path="/" exact component={Landing} filterlist="" />
+              <Route path="/" exact component={Landing} />
               <Route path="/article/:id" component={Article} />
               <Route path="/search" component={SearchArticle} />
             </Switch>

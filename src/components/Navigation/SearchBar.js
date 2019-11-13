@@ -15,7 +15,7 @@ class SearchBar extends Component {
   handleChange = e => {
     const value = e.target.value;
     let filtered = [];
-    const blog = this.blogs.map(blogdata => blogdata.title);
+    const blog = this.blogs.map(blogdata => blogdata.tags);
 
     if (value.length > 0) {
       filtered = blog.filter(item => {
@@ -28,15 +28,16 @@ class SearchBar extends Component {
 
   handleSuggestion() {
     const { suggestions } = this.state;
+    let fetchSuggestions = suggestions.map(item => item);
+    const uniqueFilter = [...new Set(fetchSuggestions)];
     if (suggestions.length === 0) {
       return null;
     }
     return (
       <ul>
-        {suggestions.map(item => (
-          <li key={item}>
-            {item}
-            {/* <Link to={`/article/${id}`}>{item}</Link> */}
+        {uniqueFilter.map((item, idx) => (
+          <li className="list-style" key={idx}>
+            <Link to={`/search/?title=${item}`}>{item}</Link>
           </li>
         ))}
       </ul>
